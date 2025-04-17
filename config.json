@@ -1,0 +1,10 @@
+{
+    "DISCORD_TOKEN": "your token",
+    "API_KEY": "Api",
+    "CHANNEL_NAME": "odds-bot",
+    "CHECK_INTERVAL": 3600,
+    "LEAGUES": {
+        "Premier League": "soccer_epl",
+        "Scottish Premiership": "soccer_spl"
+    }
+}
