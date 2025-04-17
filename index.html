@@ -1,17 +1,26 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SchemeTok Dashboard</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="light-theme">
-  <div id="root">
-    <h1><span style='font-size: 1.25rem; color:#3b82f6;'>KingScottish1Dev × SchemeTok</span><br />🔷 SchemeTok Dashboard</h1>
-    <div class="card">Bot Control Panel UI Loaded</div>
-    <script src="main.js"></script>
-  </div>
+<body>
+  <h1>👑 SchemeTok Dashboard</h1>
+  <p>Status: <strong style="color:green;">LIVE</strong></p>
+  <p>Total Matches Tracked: <strong>{{ match_count }}</strong></p>
+
+  <h2>📚 Recent Picks</h2>
+  {% if history %}
+    <ul>
+      {% for match in history %}
+        <li>{{ match.match }} — {{ match.picked }} @ {{ match.odds }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No picks logged yet.</p>
+  {% endif %}
+
+  <p><a href="/config">Edit Config</a> | <a href="/match-history">Match History</a></p>
 </body>
 </html>
